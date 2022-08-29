@@ -7,7 +7,7 @@ docs_dir: book_src
 site_dir: docs
 
 # Repository
-repo_name: MasterGroosha/telegram-tutorial-2
+repo_name: MasterGroosha/aiogram-2-guide
 repo_url: https://github.com/MasterGroosha/aiogram-2-guide
 edit_uri: ""
 
