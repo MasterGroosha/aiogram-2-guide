@@ -44,8 +44,8 @@ description: Конечные автоматы (FSM)
 
 !!! warning "Примечание об исходных текстах к главе"
     В тексте будет рассмотрен не весь код бота, некоторые импорты и обработчики специально 
-    пропущены для улучшения читабельности. Полный набор исходников можно найти [на GitLab](https://gitlab.com/groosha/telegram-tutorial-2) 
-    или в зеркале [на GitHub](https://github.com/MasterGroosha/telegram-tutorial-2).
+    пропущены для улучшения читабельности. Полный набор исходников можно найти 
+    [на GitHub](https://github.com/MasterGroosha/aiogram-2-guide).
 
 !!! info "Благодарность"
     За основу структуры файлов и каталогов взят репозиторий [tgbot_template](https://github.com/Tishka17/tgbot_template) 
