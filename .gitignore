@@ -4,3 +4,4 @@ venv/
 .env
 docker-compose.yml
 
+/code/04_fsm/config/bot.ini
