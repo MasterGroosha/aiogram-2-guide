@@ -12,12 +12,12 @@ class OrderDrinks(StatesGroup):
     waiting_for_drink_size = State()
 
 
-async def drinks_start(message: types.Message):
+async def drinks_start(message: types.Message, state: FSMContext):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     for name in available_drinks_names:
         keyboard.add(name)
     await message.answer("Выберите напиток:", reply_markup=keyboard)
-    await OrderDrinks.waiting_for_drink_name.set()
+    await state.set_state(OrderDrinks.waiting_for_drink_name.state)
 
 
 async def drinks_chosen(message: types.Message, state: FSMContext):
@@ -29,8 +29,7 @@ async def drinks_chosen(message: types.Message, state: FSMContext):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     for size in available_drinks_sizes:
         keyboard.add(size)
-    # для простых шагов можно не указывать название состояния, обходясь next()
-    await OrderDrinks.next()
+    await state.set_state(OrderDrinks.waiting_for_drink_size.state)
     await message.answer("Теперь выберите размер порции:", reply_markup=keyboard)
 
 
