@@ -12,6 +12,7 @@ class OrderFood(StatesGroup):
     waiting_for_food_size = State()
 
 
+# Обратите внимание: есть второй аргумент
 async def food_start(message: types.Message, state: FSMContext):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     for name in available_food_names:
@@ -20,7 +21,6 @@ async def food_start(message: types.Message, state: FSMContext):
     await state.set_state(OrderFood.waiting_for_food_name.state)
 
 
-# Обратите внимание: есть второй аргумент
 async def food_chosen(message: types.Message, state: FSMContext):
     if message.text.lower() not in available_food_names:
         await message.answer("Пожалуйста, выберите блюдо, используя клавиатуру ниже.")
