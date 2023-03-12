@@ -4,6 +4,10 @@ description: Знакомство с aiogram
 ---
 
 # Знакомство с aiogram
+
+!!! tip "Старая версия aiogram"
+    Для aiogram 3.x эта глава расположена [здесь](https://mastergroosha.github.io/aiogram-3-guide/quickstart/).
+
 ## Установка {: id="installation" }
 
 Для начала давайте создадим каталог для бота, организуем там virtual environment (далее venv) и

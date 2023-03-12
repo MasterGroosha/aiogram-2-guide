@@ -5,6 +5,9 @@ description: Инлайн-режим
 
 # Инлайн-режим
 
+!!! tip "Старая версия aiogram"
+    Для aiogram 3.x эта глава расположена [здесь](https://mastergroosha.github.io/aiogram-3-guide/inline_mode/).
+
 ## Введение {: id="intro" }
 
 В предыдущих главах бот и человек общались каждый сам за себя, однако в Telegram существует специальный режим, 
