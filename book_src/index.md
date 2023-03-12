@@ -10,7 +10,7 @@ title: Введение
 
 В этой версии книги, мы используем фреймворк [aiogram 2.x](https://github.com/aiogram/aiogram). Однако 
 эта версия приближается к EoL (End of Life), предлагается перейти на [aiogram 3.x](https://docs.aiogram.dev/en/dev-3.x/index.html).  
-По новой версии фреймворка у меня есть [отдельный материал](https://mastergroosha.github.io/aiogram-3-guide/buttons/), а 
+По новой версии фреймворка у меня есть [отдельный материал](https://mastergroosha.github.io/aiogram-3-guide/), а 
 текст настоящей книги служит больше архивным и историческим целям, нежели практическим.
 
 **Для кого эта книга?**  
