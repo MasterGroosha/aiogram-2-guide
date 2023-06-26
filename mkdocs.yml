@@ -62,7 +62,7 @@ markdown_extensions:
 nav:
   - 'Введение': index.md
   - 'Знакомство с aiogram': quickstart.md
-  - 'Работа с собщениями': messages.md
+  - 'Работа с сообщениями': messages.md
   - 'Кнопки': buttons.md
   - 'Конечные автоматы': fsm.md
   - 'Инлайн-режим': inline_mode.md
