@@ -60,20 +60,44 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - 'Введение': index.md
-  - 'Знакомство с aiogram': quickstart.md
-  - 'Работа с сообщениями': messages.md
-  - 'Кнопки': buttons.md
-  - 'Конечные автоматы': fsm.md
-  - 'Инлайн-режим': inline_mode.md
-
+  - index.md
+  - quickstart.md
+  - messages.md
+  - buttons.md
+  - fsm.md
+  - inline_mode.md
 
 plugins:
-  - search:
-      lang:
-        - en
-        - ru
-
+  - search
+  - i18n:
+      default_language: ru
+      default_language_only: false
+      docs_structure: folder
+      languages:
+        ru:
+          name: '<img style="height: 10px; border: 0px;" alt="ru" src="https://flagicons.lipis.dev/flags/4x3/ru.svg" title="russian" /> Русский'
+          build: true
+        uz:
+          name: "<img style='height: 10px; border: 0px;' alt='uz' src='https://flagicons.lipis.dev/flags/4x3/uz.svg' title='uzbek' /> O'zbekcha"
+          build: true
+          site_name: "Aiogram 2.Xda Telegram botlar"
+      nav_translations:
+        ru:
+          index.md: "Введение"
+          quickstart.md: "Знакомство с aiogram"
+          messages.md: "Работа с сообщениями"
+          buttons.md: "Кнопки"
+          fsm.md: "Конечные автоматы"
+          inline_mode.md: "Инлайн-режим"
+        uz:
+          index.md: "Kirish"
+          quickstart.md: "Aiogram bilan tanishuv"
+          messages.md: "Xabarlar bilan ishlash"
+          buttons.md: "Tugmalar"
+          fsm.md: "FSM (Steytlar)"
+          inline_mode.md: "Inlayn-mode"
 
 # Custom
-nav_name: "Оглавление"
+nav_name:
+  ru: "Оглавление"
+  uz: "Mundarija"
