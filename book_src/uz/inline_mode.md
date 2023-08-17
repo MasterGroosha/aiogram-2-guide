@@ -5,6 +5,9 @@ description: Inlayn-mode
 
 # Inlayn-mode
 
+!!! tip "Aiogramning eski versiyasi"
+    Aiogram 3.x uchun ushbu bob [bu yerda](https://mastergroosha.github.io/aiogram-3-guide/inline_mode/). (rus tilida!)
+
 ## Kirish {: id="intro" }
 
 Oldingi boblarda bot va foydalanuvchi o‘zaro muloqot qilgan bo‘lsa, Telegramda foydalanuvchiga o‘z nomidan ammo ma’lumotlarni bot orqali olib yuborish imkonini beruvchi maxsus rejim mavjud. Bu **inlayn rejimi** (Inline mode) deb nomlanadi:

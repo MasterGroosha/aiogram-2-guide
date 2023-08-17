@@ -5,6 +5,9 @@ description: Aiogram bilan tanishuv
 
 # Aiogram bilan tanishuv
 
+!!! tip "Aiogramning eski versiyasi"
+    Aiogram 3.x uchun ushbu bob [bu yerda](https://mastergroosha.github.io/aiogram-3-guide/quickstart/). (rus tilida!)
+
 ## O'rnatish {: id="installation" }
 
 Birinchi bo'lib bot uchun "папка" yaratamiz, va u erda virtual muhit (venv) ochib, aktivlashtiramiz va [aiogram](https://github.com/aiogram/aiogram) kutubxonasini o'rnatamiz.

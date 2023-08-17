@@ -5,6 +5,12 @@ description: FSM (Steytlar)
 
 # FSM (Steytlar) {: id="fsm-start" }
 
+!!! tip "Aiogramning eski versiyasi"
+    Aiogram 3.x uchun ushbu bob [bu yerda](https://mastergroosha.github.io/aiogram-3-guide/fsm/). (rus tilida!)
+
+??? warning "Bob yangilanishi (ko‘rsatish uchun bosing)" 
+    Bu bob 2022-yil sentabrida yangilandi, chunki steytlar aro biridan ikkinchisiga o'tish/qaytish usullari uchun xato maslahat/tushuncha berilgan. Xususan: steytning o'zida `.set()` usulini chaqirish tavsiya etilmaydi; Buning o'rniga FSMContext obyektida `set_state()` metodidan foydalanish yaxshiroq. Bundan tashqari, agar sizda ketma-ket aniq bo'lmagan xatti-harakatlar mavjud bo'lsa `.next()` metodidan foydalanmang.
+
 ## Teoriya {: id="theory" }
 
 Ushbu bobda biz botlarning, eng muhim xususiyati **dialog tizimi** haqida gaplashamiz. Afsuski, botdagi barcha amallarni bitta xabar yoki buyruqda bajarish mumkin emas. Aytaylik, tanishuv boti bor, u yerda ro'yxatdan o'tayotganda ismingizni, yoshingizni ko'rsatishingiz va rasmingizni yuborishingiz kerak. Siz, albatta, foydalanuvchidan rasm captionida hamma ma'lumotlarni yozib yuborishini so'rashingiz mumkin, ammo bu foydalanuvchi uchun ham sizning handleringiz uchun ham noqulay. Endi ma'lumotlarni bosqichma-bosqich kiritishni tasavvur qiling, bunda boshida bot ma'lum bir foydalanuvchidan ma'lum ma'lumotni kutish rejimini «yoqadi», so'ngra har bir bosqichda kiritilgan ma'lumotlarni tekshiradi va `/cancel` buyrug'i berilsa u keyingi qadamni kutishni to'xtatadi va asosiy rejimga qaytadi. Quyidagi sxemani ko'rib chiqing:

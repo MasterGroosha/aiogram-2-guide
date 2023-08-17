@@ -5,6 +5,9 @@ description: Xabarlar bilan ishlash
 
 # Xabarlar bilan ishlash
 
+!!! tip "Aiogramning eski versiyasi"
+    Aiogram 3.x uchun ushbu bob [bu yerda](https://mastergroosha.github.io/aiogram-3-guide/messages/). (rus tilida!)
+
 Ushbu bobda biz xabarlarga har xil formatlash turlarini qo'llash va media fayllar bilan ishlashni o'rganamiz.
 
 ## Matn {: id="text" }
