@@ -3,7 +3,7 @@
     <a href="{{ config.site_url | default(nav.homepage.url, true) | url }}" title="{{ config.site_name }}" class="md-nav__button md-logo" aria-label="{{ config.site_name }}">
       {% include "partials/logo.html" %}
     </a>
-    {{ config.nav_name }}
+    {{ config.nav_name.ru }} 
   </label>
   {% if config.repo_url %}
     <div class="md-nav__source">
