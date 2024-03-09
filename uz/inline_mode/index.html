@@ -1,0 +1,847 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Inlayn-mode">
+      
+      
+        <meta name="author" content="Groosha">
+      
+      
+        <link rel="canonical" href="https://mastergroosha.github.io/aiogram-2-guide/uz/inline_mode/">
+      
+      
+        <link rel="prev" href="../fsm/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Inlayn-mode - Aiogram 2.Xda Telegram botlar</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inlayn-mode" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Aiogram 2.Xda Telegram botlar" class="md-header__button md-logo" aria-label="Aiogram 2.Xda Telegram botlar" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aiogram 2.Xda Telegram botlar
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inlayn-mode
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MasterGroosha/aiogram-2-guide" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MasterGroosha/aiogram-2-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://mastergroosha.github.io/aiogram-2-guide/" title="Aiogram 2.Xda Telegram botlar" class="md-nav__button md-logo" aria-label="Aiogram 2.Xda Telegram botlar">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5Z"/></svg>
+
+    </a>
+    Оглавление 
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MasterGroosha/aiogram-2-guide" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MasterGroosha/aiogram-2-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Kirish
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        Aiogram bilan tanishuv
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messages/" class="md-nav__link">
+        Xabarlar bilan ishlash
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buttons/" class="md-nav__link">
+        Tugmalar
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsm/" class="md-nav__link">
+        FSM (Steytlar)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Inlayn-mode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Inlayn-mode
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Kirish
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-query-format" class="md-nav__link">
+    Inline so'rovlar va javoblar shakli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice" class="md-nav__link">
+    Bot yozamiz
+  </a>
+  
+    <nav class="md-nav" aria-label="Bot yozamiz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Ma'lumotlarni saqlash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-buttons" class="md-nav__link">
+    Switch-tugmalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-incoming-query" class="md-nav__link">
+    Inline so'rovni qayta ishlash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-parameter" class="md-nav__link">
+    Switch parameteri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Qo'shimcha materiallar
+  </a>
+  
+    <nav class="md-nav" aria-label="Qo'shimcha materiallar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lazy-loading" class="md-nav__link">
+    Natijalarni yuklash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-feedback" class="md-nav__link">
+    Statistika to'plash
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Kirish
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-query-format" class="md-nav__link">
+    Inline so'rovlar va javoblar shakli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice" class="md-nav__link">
+    Bot yozamiz
+  </a>
+  
+    <nav class="md-nav" aria-label="Bot yozamiz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Ma'lumotlarni saqlash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-buttons" class="md-nav__link">
+    Switch-tugmalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-incoming-query" class="md-nav__link">
+    Inline so'rovni qayta ishlash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-parameter" class="md-nav__link">
+    Switch parameteri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Qo'shimcha materiallar
+  </a>
+  
+    <nav class="md-nav" aria-label="Qo'shimcha materiallar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lazy-loading" class="md-nav__link">
+    Natijalarni yuklash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-feedback" class="md-nav__link">
+    Statistika to'plash
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="inlayn-mode">Inlayn-mode<a class="headerlink" href="#inlayn-mode" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Aiogramning eski versiyasi</p>
+<p>Aiogram 3.x uchun ushbu bob <a href="https://mastergroosha.github.io/aiogram-3-guide/inline-mode/">bu yerda</a>. (rus tilida!)</p>
+</div>
+<h2 id="intro">Kirish<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
+<p>Oldingi boblarda bot va foydalanuvchi o‘zaro muloqot qilgan bo‘lsa, Telegramda foydalanuvchiga o‘z nomidan ammo ma’lumotlarni bot orqali olib yuborish imkonini beruvchi maxsus rejim mavjud. Bu <strong>inlayn rejimi</strong> (Inline mode) deb nomlanadi:</p>
+<p><img alt="Пример работы бота @imdb в инлайн-режиме" src="../images/inline_mode/inline_demo.png" /></p>
+<p>Yuqoridagi skrinshotda ko'rib turganingizdek, yakuniy xabar foydalanuvchi nomidan yuboriladi, biroq dastlabki ro'yxat <a href="https://t.me/imdb">@imdb</a> boti tomonidan taqdim etilgan. Inline rejimining foydalanuvchilar uchun batafsil tavsifini <a href="https://core.telegram.org/bots/inline">rasmiy veb-sayt</a>da topish mumkin va ushbu bobda biz YouTube videolarni topish va havolalarni yuborishni osonlashtirish uchun o'zimizning oddiy inline botimizni yozamiz.</p>
+<h2 id="inline-query-format">Inline so'rovlar va javoblar shakli<a class="headerlink" href="#inline-query-format" title="Permanent link">&para;</a></h2>
+<p>Qachonki foydalanuvchi xabar yozish maydoniga botning username bilan uni chaqirsa, bot <a href="https://core.telegram.org/bots/api#inlinequery">InlineQuery</a> turidagi updateni oladi, undan biz uchun <code>from_user</code> fieldi muhim bo'lib, <a href="https://core.telegram.org/bots/api#user">User</a> turi botni chaqirgan foydalanuvchi haqida ma'lumotni, shuningdek, <code>query</code> fieldi, ya'ni so'rov matnini o'z ichiga oladi. Afsuski, hozirda inline bot qaysi chatda chaqirilganligini aniqlashning imkoni yo'q, ehtimol bu foydalanuvchilarning maxfiyligini saqlash uchun qilingan, chunki inline rejimidan foydalanish uchun botni guruh yoki kanalga qo‘shish shart emas.</p>
+<p>So'rovga javob berish uchun <a href="https://core.telegram.org/bots/api#answerinlinequery">answerInlineQuery</a> metodini chaqirish kerak, bu yerda siz natijani ma'lum bir turdagi obyektlar massivini va qo'shimcha ravishda turli xil bayroqcha(True-False)larni belgilashingiz kerak, bu haqida keyinroq gaplashamiz. Natija obyektlarining <a href="https://core.telegram.org/bots/api#inlinequeryresult">yigirmatacha</a> turi mavjud, ammo ularning ko'plari bir-birining o'zgarishidir. Masalan, <a href="https://core.telegram.org/bots/api#inlinequeryresultphoto">InlineQueryResultPhoto</a> rasmga havolani (URL) o'z ichiga oladi va <a href="https://core.telegram.org/bots/api#inlinequeryresultcachedphoto">InlineQueryResultCachedPhoto</a> allaqachon Telegramga yuklangan rasmning <code>file_id</code>ni o'z ichiga oladi. Bundan tashqari, inline javobda bir xil turdagi obyektlardan foydalanish tavsiya etiladi, chunki foydalanuvchi ilovalari aralash kontentni to'g'ri ko'rsatmaydi (yoki umuman ko'rsatmaydi).</p>
+<div class="admonition warning">
+<p>Diqqat: inline rejimida siz Telegramga yangi media fayllarni yuklay olmaysiz, faqat telegram serverlaridagi mavjudlaridan foydalaning yoki Internetdan URL manzilini belgilang.</p>
+</div>
+<p>Eng koʻp qoʻllaniladigan natija obyekt turlaridan biri oddiy matn boʻlgan <a href="https://core.telegram.org/bots/api#inlinequeryresultarticle">InlineQueryResultArticle</a> hisoblanadi. Keling, obyektning asosiy elementlarini batafsil ko'rib chiqaylik:</p>
+<p><img alt="Пример работы бота @imdb в инлайн-режиме" src="../images/inline_mode/InlineQueryResultArticle.png" /></p>
+<p>Yuqoridagi rasmdagi raqamlar quyidagilarni bildiradi: 1 - obyektning sarlavhasi; 2 - tavsif; 3 - oldindan ko'rish; 4 - agar foydalanuvchi (3)ni bosadigan bo'lsa, unga biriktirilgan havola. (1)dan tashqari hamma narsa ixtiyoriy. Agar siz (3)ni emas, balki uning o'ng tomonidagi narsani bossangiz, chatga nima yuboriladi? Buning uchun <a href="https://core.telegram.org/bots/api#inputmessagecontent">InputMessageContent</a> turi mavjud bo'lib, u to'rtta kichik tip bilan ifodalanadi: Text, Location, Venue va Contact. Eng oddiy holatda, foydalanuvchi bunday havolalar ro'yxatini ko'radi, elementlardan birini bosadi va <a href="https://core.telegram.org/bots/api#inputtextmessagecontent">InputTextMessageContent</a>da ko'rsatilgan matnni oladi.</p>
+<p>Qiyinmi? Lekin bu hammasi emas! InputMessageContent boshqa turdagi inline obyektlar bilan ham ishlatilishi mumkin, masalan, javob sifatida foydalanuvchiga stikerlar berish va bosilganda butun boshli stikerlar to'plamiga havola yuborish. Yoki inline rejimida sarlavhani bosganingizda filmning tavsifi. Tajriba qilib ko'ring!</p>
+<h2 id="practice">Bot yozamiz<a class="headerlink" href="#practice" title="Permanent link">&para;</a></h2>
+<p>Nazariyadan amaliyotga. Botning mohiyatini tasvirlab beraylik: bot bilan muloqotda foydalanuvchi YouTube videosiga havolani qo‘shadi (yoki yangilaydi) va o‘zining tavsifini belgilaydi. Keyin istalgan boshqa suhbatda u botga inline rejimiga murojaat qiladi, ro‘yxatdan avval saqlangan videolardan birini tanlaydi va uni jo‘natadi. Albatta, har bir foydalanuvchi o'zining saqlangan havolalariga ega bo'lishi kerak.</p>
+<div class="admonition warning">
+<p class="admonition-title">Texnologiya ishlatishda ogohlik</p>
+<p>Ushbu bobning asosiy maqsadi inline rejimi haqida gapirish bo'lganligi sababli, FSM ma'lumotlar bazasi va ma'lumotlarni saqlash kabi tegishli tafsilotlar ataylab soddalashtirilgan va matnda eslatib o'tilmaagan bo'lishi mumkin. Masalan, MemoryStorage FSM sifatida ishlatiladi va SQLite ma'lumotlar bazasi sifatida, bu bizga ushbu darsimiz uchun kifoya qiladi. Real proyektlarda esa, FSM doimiy xotirasidan (masalan, Redis) va yanada rivojlangan DBMS (masalan, PostgreSQL), shuningdek, alohida qidiruv tizimidan (ElasticSearch, Sonic...) foydalanish tavsiya etiladi.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Bot inline rejimini yoqishni unutmang!</p>
+<p>Uni yoqish uchun <a href="https://t.me/BotFather">@BotFather</a> → <code>/mybots</code> → botingizni tanlang → Bot Settings → Inline Mode → Turn on. Agar kerak bo'lsa, siz qidiruv maydoni matnini "Search..."dan ko'zni quvontiradigan narsaga o'zgartirishingiz mumkin. Va ana endi eng yaxshisi Telegram ilovasini qayta ishga tushirish, aks holda mijoz qurilmasida mavjud telegram ilovasi botning inline rejimi yo‘qligini keshlashi mumkin.</p>
+</div>
+<h3 id="storage">Ma'lumotlarni saqlash<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h3>
+<p>Yuqoridagi «talablar»ga asoslanib, biz har bir saqlangan video uchta majburiy subyektlar tomonidan tavsiflanishi mumkin degan xulosaga keldik: Telegram foydalanuvchi identifikatori, <a href="https://youtu.be/gocwRvLhDf8">YouTube video identifikatori</a> (URLdan olingan) va foydalanuvchi tavsifi. Birinchi ikkita element asosiy kalitni tashkil qiladi, bu esa har bir «Telegram_ID + YouTube_ID» juftligi uchun o'ziga xos unikal(unique)likni beradi. Ma'lumotlar bazasidagi jadval:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="ss">&quot;youtube&quot;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="ss">&quot;user_id&quot;</span><span class="w">   </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">&quot;youtube_hash&quot;</span><span class="w">  </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">&quot;description&quot;</span><span class="w">   </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="ss">&quot;user_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;youtube_hash&quot;</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Avvalroq ma'lumotlar bazasiga uncha e'tiborimizni qaratmaslikka ko'proq inlayn rejimining xususiyatlariga to'xtalishni kelishib olgan edik, ammo quyidagi ikkita funksiyani ko'rib chiqish qo'shimcha zarar qilmaydi. Birinchisi, ma'lumotlar bazasiga tavsif bilan havola qo'shish. Bu erda "UPSERT" deb nomlangan bitta hiyla bor, ya'ni. Insert yoki Update. Gap shundaki, SQL so'rovini maxsus usulda shakllantirgandan so'ng, ma'lumotlarni kiritishda (Insert), unikallik buzilgan taqdirda, xatoga yo'l qo'ymasdan, balki shu qatorni bilvosita yangilash (Update)ni bildiradi. Kodning keyingi qismiga qarang. Unda biz ma'lumotlar bazasiga yangi qator qo'shishga harakat qilmoqdamiz, ammo agar ko'rsatilgan «Telegram_ID + YouTube_ID» juftligi allaqachon mavjud bo'lsa, unda tavsif qo'shish o'rniga yangilanadi:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">insert_or_update</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">youtube_hash</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">statement</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO youtube (user_id, youtube_hash, description) &quot;</span> \
+                <span class="s2">&quot;VALUES (:user_id, :youtube_hash, :description) &quot;</span> \
+                <span class="s2">&quot;ON CONFLICT(user_id, youtube_hash) &quot;</span> \
+                <span class="s2">&quot;DO UPDATE SET description = :description&quot;</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span>
+        <span class="s2">&quot;youtube_hash&quot;</span><span class="p">:</span> <span class="n">youtube_hash</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">description</span>
+    <span class="p">})</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
+<p>Ikkinchi muhim funksiya - havolalar ro'yxatini olish. Foydalanuvchi natijani filtrlashni xohlashi mumkinligi sababli, ixtiyoriy ikkinchi <code>search_query</code> argumenti mavjud. Mavjudlarini topish uchun esa <code>LIKE</code> operatoridan foydalanamiz. Eslatib o'tamiz, realda bu yondashuv qidiruvning past samaradorligi va aniqligi tufayli mos sizga mos kelishi dargumon, ammo demonstratsiya qilish uchun bu yetarli bo'ladi:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_links</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">search_query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT youtube_hash, description from youtube WHERE user_id = ?&quot;</span>
+    <span class="k">if</span> <span class="n">search_query</span><span class="p">:</span>
+        <span class="n">statement</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; AND description LIKE ?&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;%</span><span class="si">{</span><span class="n">search_query</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="p">(</span><span class="n">user_id</span><span class="p">,))</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="switch-buttons">Switch-tugmalar<a class="headerlink" href="#switch-buttons" title="Permanent link">&para;</a></h3>
+<p>PMda havolalarni bot bilan ko'rish va o'chirish elementar tarzda amalga oshiriladi va qo'shish eng oddiy holat mashinasi yordamida tashkil etiladi (FSM mexanizmi haqida ko'proq ma'lumotni <a href="../fsm/">oldingi bobda</a> topishingiz mumkin). Bizning oxirgi steytimiz quyidagicha ko'rinishda:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">description_added</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">):</span>
+    <span class="c1"># FSM dan ma&#39;lumot olish</span>
+    <span class="n">user_data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+    <span class="c1"># Ma&#39;lumotlar bazasiga ma&#39;lumotlarni kiritish</span>
+    <span class="n">dbworker</span><span class="o">.</span><span class="n">insert_or_update</span><span class="p">(</span>
+        <span class="n">user_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> 
+        <span class="n">youtube_hash</span><span class="o">=</span><span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;yt_hash&quot;</span><span class="p">],</span> 
+        <span class="n">description</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
+    <span class="p">)</span>
+    <span class="c1"># switch-tugmalari bilan keyboard yaratish va xabar yuborish</span>
+    <span class="n">switch_keyboard</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardMarkup</span><span class="p">()</span>
+    <span class="n">switch_keyboard</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Попробовать&quot;</span><span class="p">,</span> 
+            <span class="n">switch_inline_query</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">switch_keyboard</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Попробовать здесь&quot;</span><span class="p">,</span> 
+            <span class="n">switch_inline_query_current_chat</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span>
+        <span class="s2">&quot;Ссылка и описание успешно добавлены в инлайн-режим и &quot;</span>
+        <span class="s2">&quot;станут доступны в течение пары минут!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;Полный список сохранённых ссылок: /links&quot;</span><span class="p">,</span>
+        <span class="n">reply_markup</span><span class="o">=</span><span class="n">switch_keyboard</span>
+    <span class="p">)</span>
+    <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+</code></pre></div>
+<p>Ilgari <a href="../buttons/">tugmalar bobida</a> biz ikki turdagi inlayn tugmalarni ko'rdik: URL va Callback. Inline rejimi uchun uchinchi tur: Switch. Yuqoridagi kodda ikkita tugma e'lon qilingan, ulardan biri bo'sh <code>switch_inline_query</code> parametri, ikkinchisi bo'sh <code>switch_inline_query_current_chat</code> bilan. Birinchisi sizni chat tanlashni taklif qiladi, so'ngra inline rejimini faollashtirish uchun yozuv maydonida botning usernameni yozadi, ikkinchisi ham xuddi shunday, lekin joriy chatda (bizning holatda, bot bilan shaxsiy xabarda). Agar parametrlar bo'sh bo'lmasa va matn ko'rsatilgan bo'lsa, u botning username yoniga qo'shiladi, masalan: <code>switch_inline_query="text"</code> -&gt; <code>@bot text</code>. <a href="https://t.me/like">@like</a> boti xuddi shunday ishlaydi, bu sizga yangi yaratilgan postni darhol biror joyga yuborish imkonini beradi.</p>
+<h3 id="handle-incoming-query">Inline so'rovni qayta ishlash<a class="headerlink" href="#handle-incoming-query" title="Permanent link">&para;</a></h3>
+<p>Keling, foydalanuvchining botga so'rovini inline rejimida handlega o'tamiz. Ba'zi hollarda, bo'sh so'rov uchun alohida handlerni yaratish (<a href="https://core.telegram.org/bots/api#inlinequery">InlineQuery</a> obyektining <code>query</code> maydonidagi matn uzunligi nolga teng bo'lganda) va qandaydir "umumiy" javob yoki botgga o'tish uchun taklifni ko'rsatish qulay. Lekin bizning holatlarimizda har qanday, hatto bo'sh so'rov ham DBga murojaat qilishimizni talab qiladi, shuning uchun ikkala holatni bitta handlerda birlashtiramiz. Birinchi variantni ko'rib chiqamiz: foydalanuvchida saqlangan havolalar yo'q yoki u hech narsa topilmaydigan so'rovni kiritdi. Keling, kodni ko'rib chiqaylik:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">inline_handler</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineQuery</span><span class="p">):</span>
+    <span class="c1"># Foydalanuvchi havolalarini olish (query bo&#39;lmasa, None)</span>
+    <span class="n">user_links</span> <span class="o">=</span> <span class="n">dbworker</span><span class="o">.</span><span class="n">get_links</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">user_links</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Natijalar ustidagi sarlavha uchun matn tanlash</span>
+        <span class="n">switch_text</span> <span class="o">=</span> <span class="s2">&quot;У вас нет сохранённых ссылок. Добавить »»&quot;</span> \
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> \
+            <span class="k">else</span> <span class="s2">&quot;Не найдено ссылок по данному запросу. Добавить »»&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">query</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span>
+            <span class="p">[],</span> <span class="n">cache_time</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">is_personal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">switch_pm_parameter</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> 
+            <span class="n">switch_pm_text</span><span class="o">=</span><span class="n">switch_text</span>
+        <span class="p">)</span>
+</code></pre></div>
+<p>Keling, ushbu kod qismini batafsil ko'rib chiqaylik. <code>InlineQueryResultArticle</code> obyekti ko'rib chiqilgan yuqoridagi rasmda yuqori qismida "Добавить ссылку »»" qatorini ko'rishingiz mumkin, bu "swtich-obyekti", bizga botning shaxsiysiga <code>/start</code> buyrug'ini qo'shimcha parametr bilan o'tkazadi, bizning holatlarimizda bu <code>add</code>, ya'ni. bot <code>/start add</code> matni bilan xabar oladi va shunga mos ravishda javob bera oladi. Va kodning eng pastki qismida biz <code>answerInlineQuery</code> metodini chaqirib, qo'shimcha tarzda yana ikkita parametr: <code>cache_time</code> va <code>is_personal</code> beramiz. Birinchisi Telegram serverlarida natijalarni keshlash vaqti uchun javob beradi (sekundlarda) va standart qiymati 300 (5 daqiqa)ga teng. Bu shuni anglatadiki, agar foydalanuvchi belgilangan muddat ichida xuddi shunday so‘rov (hatto bo‘sh) bilan inline botga qo‘ng‘iroq qilsa (axax), Telegram uni botga yo‘naltirmaydi, balki keshdagi qiymat bilan darhol javob beradi. Ikkinchi parametr, <code>is_personal</code>, keshlashni har bir foydalanuvchi uchun unikal qiladi va natijalarni shaxsiylashtiradi (bu degani Aziz <code>salom</code> deb so'rov jo'natsa faqat Aziz uchun natijalar keshlanadi, Alida esa <code>salom</code> uchun alohida kesh, agar <code>is_personal=False</code> bo'lganida Aziz birinchi bo'lib so'rov yuborsa u umumiy hamma uchun <code>cache_time</code> vaqtiga qarab keshlanadi va boshqa barcha shu so'rovni yuborganlarda natija darhol chiqadi).</p>
+<div class="admonition abstract">
+<p>Muallif bir marta <a href="https://t.me/my_id_bot">@my_id_bot</a> botida <code>is_personal</code> bayrog'chasiga <code>True</code> ko'rsatishni unutib qo'ygan, keshni 86400 soniya (1 kun)ga o'rnatgan va o'z IDsini o'rniga keshlangan boshqa foydalanuvchilar IDlar bilan chalkashlik sodir bo'lgan, foydalanuvchilar orasida ko'plab noroziliklarini keltirib chiqargan. Boshqalar qilgan xatoni siz takrorlamang!</p>
+</div>
+<p>Endi ikkinchi holatni ko'rib chiqamiz: ba'zi havolalar foydalanuvchining so'roviga binoan topiladi. Keling, <code>InlineQueryResultArticle</code> turidagi natija obyektlar massivini tuzamiz:</p>
+<div class="highlight"><pre><span></span><code><span class="n">user_links</span> <span class="o">=</span> <span class="n">dbworker</span><span class="o">.</span><span class="n">get_links</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="n">articles</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">InlineQueryResultArticle</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">title</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;https://youtu.be/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;https://youtu.be/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">hide_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">thumb_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;https://img.youtube.com/vi/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">/1.jpg&quot;</span><span class="p">,</span>
+            <span class="n">input_message_content</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">InputTextMessageContent</span><span class="p">(</span>
+                <span class="n">message_text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">quote_html</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">&lt;/b&gt;</span><span class="se">\n</span><span class="s2">https://youtu.be/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">user_links</span>
+    <span class="p">]</span>
+</code></pre></div>
+<p>Biz <a href="#-_1">yuqorida</a>gi ba'zi maydonlarni ko'rib chiqqan edik, qolganlarini ko'rib chiqaylik: <code>id</code> - natija obyektining unikal identifikatori uchun (bizning holatimizda bu YouTube video xeshini ishlatish juda qulay), <code>hide_url</code> - natijadagi havolaning (<code>url</code>) ko'rinishini belgilovchi param, <code>thumb_url</code> oldindan ko'rish tasviriga havola, qo'shimcha ravishda oldindan ko'rishning eni (<code>thumb_height</code>) va kengligi (<code>thumb_width</code>)ni belgilashingiz mumkin. <code>InputTextMessageContent</code> obyekti tayinlangan <code>input_message_content</code> argumenti yakuniy xabar uchun javobgardir. Matn formatini buzadigan yovuz belgilardan qochish uchun <code>quote_html()</code> ishlatilgan.</p>
+<p>Umuman olganda, inline handlerning to'liq kodi quyidagicha ko'rinadi:
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">inline_handler</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineQuery</span><span class="p">):</span>
+    <span class="n">user_links</span> <span class="o">=</span> <span class="n">dbworker</span><span class="o">.</span><span class="n">get_links</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">query</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">user_links</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">switch_text</span> <span class="o">=</span> <span class="s2">&quot;У вас нет сохранённых ссылок. Добавить »»&quot;</span> \
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> \
+            <span class="k">else</span> <span class="s2">&quot;Не найдено ссылок по данному запросу. Добавить »»&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">query</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span>
+            <span class="p">[],</span> <span class="n">cache_time</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">is_personal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">switch_pm_parameter</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> 
+            <span class="n">switch_pm_text</span><span class="o">=</span><span class="n">switch_text</span>
+        <span class="p">)</span>
+
+    <span class="n">articles</span> <span class="o">=</span> <span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">InlineQueryResultArticle</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;https://youtu.be/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;https://youtu.be/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">hide_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">thumb_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;https://img.youtube.com/vi/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">/1.jpg&quot;</span><span class="p">,</span>
+        <span class="n">input_message_content</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">InputTextMessageContent</span><span class="p">(</span>
+            <span class="n">message_text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">quote_html</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">&lt;/b&gt;</span><span class="se">\n</span><span class="s2">https://youtu.be/</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">user_links</span><span class="p">]</span>
+    <span class="k">await</span> <span class="n">query</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span>
+        <span class="n">articles</span><span class="p">,</span> <span class="n">cache_time</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">is_personal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">switch_pm_text</span><span class="o">=</span><span class="s2">&quot;Добавить ссылку »»&quot;</span><span class="p">,</span> 
+        <span class="n">switch_pm_parameter</span><span class="o">=</span><span class="s2">&quot;add&quot;</span>
+    <span class="p">)</span>
+</code></pre></div></p>
+<div class="admonition tip">
+<p>YouTube xeshi yordamida videoning turli xil ko'rinishlarini osongina olishingiz mumkinligini bilasizmi? Agar yo'q bo'lsa, <a href="https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api">StackOverflow</a>dagi ushbu ajoyib postga o'ting.</p>
+</div>
+<h3 id="switch-parameter">Switch parameteri<a class="headerlink" href="#switch-parameter" title="Permanent link">&para;</a></h3>
+<p>Biz biroz yuqoriroqda ma'lum qilganimizdek, <code>switch_pm_parameter</code> start-parametr sifatida <code>/add</code> buyrug'ini bergan edik (Bot APIda bu <a href="https://core.telegram.org/bots#deep-linking">Deep Linking</a> deb ataladi). Uni handle qilish uchun biz <code>/start add</code> Deep-havolasini filtrlashimiz lozim, buning uchun biz ikkinchi quyidagi filtrni osha handlerimiz uchun ro'yxatdan o'tkazamiz:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dp</span><span class="o">.</span><span class="n">register_message_handler</span><span class="p">(</span><span class="n">cmd_add_link</span><span class="p">,</span> <span class="n">commands</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="n">dp</span><span class="o">.</span><span class="n">register_message_handler</span><span class="p">(</span><span class="n">cmd_add_link</span><span class="p">,</span> <span class="n">CommandStart</span><span class="p">(</span><span class="n">deep_link</span><span class="o">=</span><span class="s2">&quot;add&quot;</span><span class="p">),</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Bot bilan hammasi shu, yuqori o'ng burchakdagi tugmani bosish orqali repoga o'tib manba kodlarini ko'rib chiqishingiz mumkin. Biroq inline rejimini tugatishdan avval, bir nechta qiziqarli xususiyatlarni ko'rib chiqishimiz kerak ...</p>
+<h2 id="extras">Qo'shimcha materiallar<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
+<h3 id="lazy-loading">Natijalarni yuklash<a class="headerlink" href="#lazy-loading" title="Permanent link">&para;</a></h3>
+<p>Bot APIga ko'ra, bitta <a href="https://core.telegram.org/bots/api#answerinlinequery">answerInlineQuery</a> chaqiruvida maksimal 50 ta element yuborilishi mumkin. Ammo bizga ko'proq kerak bo'lsa-chi? Bunday holatda, <code>next_offset</code> parametri foydalanish kerak. U botning o'zi tomonidan belgilanadi va foydalanuvchi butun joriy paketni aylantirganda, xuddi shu qiymat keyingi so'rovda keladi. Misol uchun, 50 ta elementdan iborat paketlarni qaytaradigan, lekin maksimal qiymati 195 bo'lgan oddiy son generatorini yozamiz:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_fake_results</span><span class="p">(</span><span class="n">start_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">):</span>
+    <span class="n">overall_items</span> <span class="o">=</span> <span class="mi">195</span>
+    <span class="c1"># Agar boshqa natijalar bo&#39;lmasa, bo&#39;sh ro&#39;yxat yuboramiz</span>
+    <span class="k">if</span> <span class="n">start_num</span> <span class="o">&gt;=</span> <span class="n">overall_items</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="c1"># To&#39;liq bo&#39;lmagan paketni yuborish (oxirgi)</span>
+    <span class="k">elif</span> <span class="n">start_num</span> <span class="o">+</span> <span class="n">size</span> <span class="o">&gt;=</span> <span class="n">overall_items</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">start_num</span><span class="p">,</span> <span class="n">overall_items</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">start_num</span><span class="p">,</span> <span class="n">start_num</span><span class="o">+</span><span class="n">size</span><span class="p">))</span>
+</code></pre></div>
+<p>Keling, inline-handlerimizni shunday yozaylikki, u joriy ro'yxatning oxiriga yaqinlashganda, u davom etishni so'raydi. Buning uchun avval <code>offset</code> maydonini tekshiramiz va agar bo'sh bo'lsa, uni 1 ga teng deymiz. Natijalarning soxta ro'yxatini yaratamiz. Agar natija aniq 50 ta obyekt bo'lsa, javobda joriy qiymatga + 50 ga teng <code>next_offset</code> belgilaymiz. Agar obyektlar kamroq bo'lsa, Telegram endi botga so'rov yubormasligi uchun uni bo'sh qatorga aylantiramiz.</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">inline_handler</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineQuery</span><span class="p">):</span>
+    <span class="c1"># offsetni raqam sifatida hisoblaymiz</span>
+    <span class="n">query_offset</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span> <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">offset</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">InlineQueryResultArticle</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">item_num</span><span class="p">),</span>
+        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Объект №</span><span class="si">{</span><span class="n">item_num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">input_message_content</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">InputTextMessageContent</span><span class="p">(</span>
+            <span class="n">message_text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Объект №</span><span class="si">{</span><span class="n">item_num</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span> <span class="k">for</span> <span class="n">item_num</span> <span class="ow">in</span> <span class="n">get_fake_results</span><span class="p">(</span><span class="n">query_offset</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="c1"># Boshqa natijalar yo‘q, next_offset bo‘sh qolishi kerak</span>
+        <span class="k">await</span> <span class="n">query</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">is_personal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">next_offset</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Keyingi to&#39;plamni intiqlik bilan kutamiz :)</span>
+        <span class="k">await</span> <span class="n">query</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">is_personal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">next_offset</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">query_offset</span><span class="o">+</span><span class="mi">50</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="inline-feedback">Statistika to'plash<a class="headerlink" href="#inline-feedback" title="Permanent link">&para;</a></h3>
+<p>Kam odam biladi, lekin Telegram sizga inline rejimida botdan foydalanish bo'yicha oddiy statistik ma'lumotlarni to'plash imkonini beradi. Avval @BotFather uchun tegishli sozlamani yoqishingiz kerak: <code>/mybots</code> - (botni tanlang) - Bot Settings - Inline Feedback:</p>
+<p><img alt="Пример работы бота @imdb в инлайн-режиме" src="../images/inline_mode/botfather_inline_feedback.png" /></p>
+<p>Tugmalardagi foizlar foydalanuvchi inline rejimida obyektni tanlaganda <a href="https://core.telegram.org/bots/api#choseninlineresult">ChosenInlineResult</a> hodisasini olish <em>ehtimolini</em> ko'rsatadi. Masalan, agar qiymat <strong>10%</strong>ga o'rnatilgan bo'lsa, har bir obyektni tanlashda botda <code>ChosenInlineResult</code> hodisasini olish uchun o'n foiz imkoniyat mavjud. Telegram botga yuklanish ikki baravar ko‘paygani uchun qiymatni 100% qilib belgilashni tavsiya etmaydi. Bunday hodisalar uchun handlerga misol:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@dp</span><span class="o">.</span><span class="n">chosen_inline_handler</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">chosen_handler</span><span class="p">(</span><span class="n">chosen_result</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">ChosenInlineResult</span><span class="p">):</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Chosen query: </span><span class="si">{</span><span class="n">chosen_result</span><span class="o">.</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;from user: </span><span class="si">{</span><span class="n">chosen_result</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2023 Groosha
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://t.me/+DE0_2nCvbXozZjUy" target="_blank" rel="noopener" title="Чат в Telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/MasterGroosha/aiogram-2-guide" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>

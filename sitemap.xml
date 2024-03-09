@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+         <loc>https://mastergroosha.github.io/aiogram-2-guide/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://mastergroosha.github.io/aiogram-2-guide/ru/"/>
+         <xhtml:link rel="alternate" hreflang="uz" href="https://mastergroosha.github.io/aiogram-2-guide/uz/"/>
+         
+    </url>
+    <url>
+         <loc>https://mastergroosha.github.io/aiogram-2-guide/buttons/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://mastergroosha.github.io/aiogram-2-guide/ru/buttons/"/>
+         <xhtml:link rel="alternate" hreflang="uz" href="https://mastergroosha.github.io/aiogram-2-guide/uz/buttons/"/>
+         
+    </url>
+    <url>
+         <loc>https://mastergroosha.github.io/aiogram-2-guide/fsm/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://mastergroosha.github.io/aiogram-2-guide/ru/fsm/"/>
+         <xhtml:link rel="alternate" hreflang="uz" href="https://mastergroosha.github.io/aiogram-2-guide/uz/fsm/"/>
+         
+    </url>
+    <url>
+         <loc>https://mastergroosha.github.io/aiogram-2-guide/inline_mode/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://mastergroosha.github.io/aiogram-2-guide/ru/inline_mode/"/>
+         <xhtml:link rel="alternate" hreflang="uz" href="https://mastergroosha.github.io/aiogram-2-guide/uz/inline_mode/"/>
+         
+    </url>
+    <url>
+         <loc>https://mastergroosha.github.io/aiogram-2-guide/messages/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://mastergroosha.github.io/aiogram-2-guide/ru/messages/"/>
+         <xhtml:link rel="alternate" hreflang="uz" href="https://mastergroosha.github.io/aiogram-2-guide/uz/messages/"/>
+         
+    </url>
+    <url>
+         <loc>https://mastergroosha.github.io/aiogram-2-guide/quickstart/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://mastergroosha.github.io/aiogram-2-guide/ru/quickstart/"/>
+         <xhtml:link rel="alternate" hreflang="uz" href="https://mastergroosha.github.io/aiogram-2-guide/uz/quickstart/"/>
+         
+    </url>
+</urlset>
