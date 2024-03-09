@@ -6,7 +6,7 @@ description: Инлайн-режим
 # Инлайн-режим
 
 !!! tip "Старая версия aiogram"
-    Для aiogram 3.x эта глава расположена [здесь](https://mastergroosha.github.io/aiogram-3-guide/inline_mode/).
+    Для aiogram 3.x эта глава расположена [здесь](https://mastergroosha.github.io/aiogram-3-guide/inline-mode/).
 
 ## Введение {: id="intro" }
 

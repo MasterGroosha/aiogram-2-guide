@@ -6,7 +6,7 @@ description: Inlayn-mode
 # Inlayn-mode
 
 !!! tip "Aiogramning eski versiyasi"
-    Aiogram 3.x uchun ushbu bob [bu yerda](https://mastergroosha.github.io/aiogram-3-guide/inline_mode/). (rus tilida!)
+    Aiogram 3.x uchun ushbu bob [bu yerda](https://mastergroosha.github.io/aiogram-3-guide/inline-mode/). (rus tilida!)
 
 ## Kirish {: id="intro" }
 
